@@ -1,0 +1,18 @@
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /
+  script: main.app
+
+libraries:
+- name: MySQLdb
+  version: "latest"
+
+# [START env_variables]
+env_variables:
+    CLOUDSQL_CONNECTION_NAME: civil-treat-205501:northamerica-northeast1:myblicket
+    CLOUDSQL_USER: root
+    CLOUDSQL_PASSWORD: 608900
+# [END env_variables]

@@ -1,0 +1,29 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static "admin/css/base.css" %}"/>
+<link rel="stylesheet" type="text/css" href="{% static "admin/css/style.css" %}"/>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BlicketWeb</title>
+</head>
+<body>
+<!--
+<video autoplay muted loop id="myVideo">
+    {% load static %}
+    <source src="../static/admin/video/video1.mp4" type="video/mp4">
+</video>
+-->
+<div class="content">
+<h1>Please Select a Participant</h1>
+    <form method="POST">
+        <select name="participant_name" title="participant_name">
+            {% for entry in items %}
+                <option value="{{ entry.id }}">{{ entry.name }}</option>
+            {% endfor %}
+        </select>
+    </form>
+    <button class="button">Start Recording</button>
+</div>
+
+</body>
+</html>
